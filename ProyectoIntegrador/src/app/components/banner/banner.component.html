@@ -1,0 +1,26 @@
+
+<section id="banner" class="banner" [ngStyle]="{'background-image': 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url(' + banner.imagen + ')'}">
+  <div class="container text-white text-center">
+    <div class="row">
+      <div class="col">
+        <h1>{{banner.titulo}}</h1>
+        <h2>{{banner.subtitulo}}</h2>
+
+
+
+        <ul class="list-inline m-0 mt-3">
+          <li class="list-inline-item">
+              <button class="btn btn-success btn-sm rounded-4" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#bannerModal"><i class="fa fa-edit"></i></button>
+          </li>
+          <li class="list-inline-item">
+              <button class="btn btn-danger btn-sm rounded-4" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<app-modal-banner></app-modal-banner>

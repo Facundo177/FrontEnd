@@ -1,0 +1,36 @@
+<section id="experiencia" class="experiencia section-padding">
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12 col-lg-8">
+            <div cLass="section-header text-center pb-5 my-2">
+                <h2>{{secciones[1].titulo}}</h2>
+                <p>{{secciones[1].descripcion}}</p>
+
+                <p *ngFor="let experiencia of experiencias">
+                  - {{experiencia.descripcion}}
+                </p>
+
+
+                  <ul class="list-inline my-2 text-center">
+                    <li class="list-inline-item">
+                        <button class="btn btn-success btn-sm rounded-4" type="button" title="Edit" data-bs-toggle="modal" attr.data-bs-target="{{secciones[1].dataBsTarget}}"><i class="fa fa-edit"></i></button>
+                    </li>
+                    <li class="list-inline-item">
+                        <button class="btn btn-danger btn-sm rounded-4" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+                    </li>
+                  </ul>
+
+            </div>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<app-modal-experiencia></app-modal-experiencia>
+
+
+          <hr>

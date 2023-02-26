@@ -1,0 +1,136 @@
+<section id="proyectos" class= "proyectos section-padding">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div cLass="section-header text-center pb-5">
+                <h2>{{secciones[4].titulo}}</h2>
+                <p>{{secciones[4].descripcion}}</p>
+
+
+                  <ul class="list-inline my-2 text-center">
+                    <li class="list-inline-item">
+                        <button class="btn btn-success btn-sm rounded-4" type="button" title="Edit" data-bs-toggle="modal" attr.data-bs-target="{{secciones[4].dataBsTarget}}"><i class="fa fa-edit"></i></button>
+                    </li>
+                    <li class="list-inline-item">
+                        <button class="btn btn-danger btn-sm rounded-4" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+                    </li>
+                  </ul>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-12 col-md-12 col-lg-4" *ngFor="let proyecto of proyectos">
+            <div cLass="card text-center bg-white pb-2 mb-2">
+                <div class="card-body text-dark">
+                    <div class="img-area mb-4">
+                        <img [src]="proyecto.imagen" [alt]="proyecto.alt" class="img-fluid">
+                    </div>
+                    <h3 class="card-title">{{proyecto.tituloCarta}}</h3>
+                    <p class="lead fw-normal">{{proyecto.descripcionCarta}}</p>
+
+                    <div *ngIf="proyecto.imgBtn; else elseBlock">
+                      <div *ngIf="proyecto.modal; else Block">
+                        <button class="btn bg-warning text-dark" data-bs-toggle="modal" attr.data-bs-target="{{proyecto.target}}"><img class="imgInstructables" [src]="proyecto.srcImgBtn" [alt]="proyecto.altBtn"></button>
+                      </div>
+                      <ng-template #Block>
+                        <a [href]="proyecto.href" target="_blank"><button class="btn bg-warning text-dark"><img class="imgInstructables" [src]="proyecto.srcImgBtn" [alt]="proyecto.altBtn"></button></a>
+                      </ng-template>
+                    </div>
+
+                    <ng-template #elseBlock>
+                      <div *ngIf="proyecto.modal; else Block">
+                        <button class="btn bg-warning text-dark" data-bs-toggle="modal" attr.data-bs-target="{{proyecto.target}}">{{proyecto.boton}}</button>
+                      </div>
+                      <ng-template #Block>
+                        <a [href]="proyecto.href" target="_blank"><button class="btn bg-warning text-dark">{{proyecto.boton}}</button></a>
+                      </ng-template>
+                    </ng-template>
+
+
+                    <ul class="list-inline mt-3 mb-0 text-center">
+                      <li class="list-inline-item">
+                          <button class="btn btn-success btn-sm rounded-4" type="button" title="Edit" data-bs-toggle="modal" attr.data-bs-target="{{proyecto.dataBsTarget}}"><i class="fa fa-edit"></i></button>
+                      </li>
+                      <li class="list-inline-item">
+                          <button class="btn btn-danger btn-sm rounded-4" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+                      </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+<!--
+        <div class="col-12 col-md-12 col-lg-4">
+          <div cLass="card text-center bg-white pb-2 mb-2">
+              <div class="card-body text-dark">
+                  <div class="img-area mb-4">
+                      <img src="assets/img/Portfolio.png" alt="Portfolio" class="img-fluid">
+                  </div>
+                  <h3 class="card-title">Portfolio Web Full Stack</h3>
+                  <p class="lead fw-normal">Aplicación web full stack desarrollada entre 2022 y 2023, que cumple la función de portfolio digital. Aplica una gran cantidad de tecnologías para su arquitectura distribuida y su diseño responsive.</p>
+                  <a href="" target="_blank"><button class="btn bg-warning text-dark">Acceder</button></a>
+
+
+                  <ul class="list-inline mt-3 mb-0 text-center">
+                    <li class="list-inline-item">
+                        <button class="btn btn-success btn-sm rounded-4" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#2proyectoModal"><i class="fa fa-edit"></i></button>
+                    </li>
+                    <li class="list-inline-item">
+                        <button class="btn btn-danger btn-sm rounded-4" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+                    </li>
+                  </ul>
+
+
+                </div>
+          </div>
+      </div>
+
+
+
+
+
+
+      <div class="col-12 col-md-12 col-lg-4">
+        <div cLass="card text-center bg-white pb-2 mb-2">
+            <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                    <img src="assets/img/Arduino.jpg" alt="Arduino" class="img-fluid">
+                </div>
+                <h3 class="card-title">Actividades en Arduino</h3>
+                <p class="lead fw-normal">Realicé diferentes prácticas con elementos de Arduino en 2022, como pueden ser un Dado Digital, una Calculadora o un Teclado. </p>
+                <button class="btn bg-warning text-dark" data-bs-toggle="modal" data-bs-target="#arduinoModal">Código</button>
+
+
+                <ul class="list-inline mt-3 mb-0 text-center">
+                  <li class="list-inline-item">
+                      <button class="btn btn-success btn-sm rounded-4" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#3proyectoModal"><i class="fa fa-edit"></i></button>
+                  </li>
+                  <li class="list-inline-item">
+                      <button class="btn btn-danger btn-sm rounded-4" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+                  </li>
+                </ul>
+
+
+              </div>
+        </div>
+    </div> -->
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<app-modal-proyectos></app-modal-proyectos>

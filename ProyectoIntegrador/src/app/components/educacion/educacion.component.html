@@ -1,0 +1,169 @@
+<section id="educacion" class="educacion section-padding">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+            <div class="section-header text-center pb-5 my-2">
+                <h2>{{secciones[2].titulo}}</h2>
+                <p>
+                  {{secciones[2].descripcion}}
+                </p>
+
+
+                  <ul class="list-inline my-2 text-center">
+                    <li class="list-inline-item">
+                        <button class="btn btn-success btn-sm rounded-4" type="button" title="Edit" data-bs-toggle="modal" attr.data-bs-target="{{secciones[2].dataBsTarget}}"><i class="fa fa-edit"></i></button>
+                    </li>
+                    <li class="list-inline-item">
+                        <button class="btn btn-danger btn-sm rounded-4" type="button" title="Delete"><i class="fa fa-trash"></i></button>
+                    </li>
+                  </ul>
+
+            </div>
+          </div>
+      </div>
+
+
+      <div class="row">
+
+          <div class="col-12 col-md-12 col-lg-4" *ngFor="let educacion of educaciones">
+            <div class="card text-white text-center bg-dark pb-2 mb-2">
+                <div class="card-body">
+                    <img [src]="educacion.imagen" [alt]="educacion.alt" class="img-fluid mb-1 {{educacion.classImg}}">
+                    <h3 class="card-title">{{educacion.tituloCarta}}</h3>
+                    <p class="lead mx-1">{{educacion.descripcionCarta}}</p>
+
+                    <div *ngIf="educacion.modal; else elseBlock">
+                      <button class="btn btn-warning text-dark" data-bs-toggle="modal" attr.data-bs-target="{{educacion.target}}">{{educacion.boton}}</button>
+                    </div>
+
+                    <ng-template #elseBlock>
+                      <a [href]="educacion.href" target="_blank"><button class="btn btn-warning text-dark">{{educacion.boton}}</button></a>
+                    </ng-template>
+
+
+                    <ul class="list-inline mt-3 mb-0 text-center">
+                      <li class="list-inline-item">
+                          <button class="btn btn-success btn-sm rounded-4" type="button" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" attr.data-bs-target="{{educacion.dataBsTarget}}"><i class="fa fa-edit"></i></button>
+                      </li>
+                      <li class="list-inline-item">
+                          <button class="btn btn-danger btn-sm rounded-4" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                      </li>
+                    </ul>
+
+                </div>
+            </div>
+          </div>
+
+
+      </div>
+  </div>
+</section>
+
+
+
+
+
+<app-modal-educacion></app-modal-educacion>
+
+
+          <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- <div class="col-12 col-md-12 col-lg-4">
+              <div class="card text-white text-center bg-dark pb-2 mb-2">
+                  <div class="card-body">
+                      <img src="assets/img/logo512_f4b4cdb9e9.png" alt="ETHF" class="img-fluid mt-1 mb-2 logoETHF">
+                      <h3 class="card-title">Escuela Técnica Henry Ford</h3>
+                      <p class="lead mx-1">Completé los seis años de educación secundaria técnica (2017-2022) y actualmente me encuentro cursando las prácticas profesionalizantes (7º año).</p>
+                      <a href="https://www.henryford.edu.ar" target="_blank"><button class="btn btn-warning text-dark">Más información</button></a>
+
+                      <ul class="list-inline mt-3 mb-0 text-center">
+                        <li class="list-inline-item">
+                            <button class="btn btn-success btn-sm rounded-4" type="button" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" data-bs-target="#1educacionModal"><i class="fa fa-edit"></i></button>
+                        </li>
+                        <li class="list-inline-item">
+                            <button class="btn btn-danger btn-sm rounded-4" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                        </li>
+                      </ul>
+
+
+                    </div>
+              </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-4">
+            <div class="card text-white text-center bg-dark pb-2 mb-2">
+                <div class="card-body">
+                    <img src="assets/img/CAESEOR-1.png" alt="FCE" class="img-fluid mb-1 logoCambridge">
+                    <h3 class="card-title">Cambridge Assessment English</h3>
+                    <p class="lead mx-1">Rendí satisfactoriamente el exámen First (FCE) de Cambridge en 2021 y obtuve la certificación de un nivel de inglés B2.</p>
+                    <button class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#CertifFCEModal">Certificado</button>
+
+                    <ul class="list-inline mt-3 mb-0 text-center">
+                      <li class="list-inline-item">
+                          <button class="btn btn-success btn-sm rounded-4" type="button" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" data-bs-target="#2educacionModal"><i class="fa fa-edit"></i></button>
+                      </li>
+                      <li class="list-inline-item">
+                          <button class="btn btn-danger btn-sm rounded-4" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                      </li>
+                    </ul>
+
+
+                  </div>
+            </div>
+          </div> -->
+
+
+          <!-- <div class="col-12 col-md-12 col-lg-4">
+            <div class="card text-white text-center bg-dark pb-2 mb-2">
+                <div class="card-body">
+                    <img src="assets/img/Harvard-Logo.png" alt="CS50" class="img-fluid logoHarvard">
+                    <h3 class="card-title">CS50</h3>
+                    <p class="lead mx-1">En 2021 vi las clases en línea y realicé actividades del curso CS50, un curso introductorio de ciencias de la computación que se imparte en la Universidad de Harvard.</p>
+                    <a href="https://www.youtube.com/playlist?list=PLhQjrBD2T380F_inVRXMIHCqLaNUd7bN4" target="_blank"><button class="btn btn-warning text-dark">Más información</button></a>
+
+                    <ul class="list-inline mt-3 mb-0 text-center">
+                      <li class="list-inline-item">
+                          <button class="btn btn-success btn-sm rounded-4" type="button" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" data-bs-target="#4educacionModal"><i class="fa fa-edit"></i></button>
+                      </li>
+                      <li class="list-inline-item">
+                          <button class="btn btn-danger btn-sm rounded-4" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col-12 col-md-12 col-lg-4">
+            <div class="card text-white text-center bg-dark pb-2 mb-2">
+                <div class="card-body">
+                    <img src="assets/img/argentina-programa-banner.png" alt="Argentina Programa" class="img-fluid ArgProg mt-3">
+                    <h3 class="card-title">#SéProgramar</h3>
+                    <p class="lead mx-1">Cursé la primera etapa del programa en 2022.</p>
+                    <button class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#CertifSeProgModal">Certificado</button>
+
+                    <ul class="list-inline mt-3 mb-0 text-center">
+                      <li class="list-inline-item">
+                          <button class="btn btn-success btn-sm rounded-4" type="button" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" data-bs-target="#5educacionModal"><i class="fa fa-edit"></i></button>
+                      </li>
+                      <li class="list-inline-item">
+                          <button class="btn btn-danger btn-sm rounded-4" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+          </div> -->
